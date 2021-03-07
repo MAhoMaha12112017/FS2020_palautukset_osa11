@@ -14,7 +14,7 @@ jobs:
           node-version: "12.x"
       - name: npm install
         run: npm install
-      - name: lint
-        run: npm run eslint
+      # - name: lint
+      #   run: npm run eslint
       - name: build
         run: npm run build:ui
