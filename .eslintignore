@@ -1,4 +1,4 @@
-build
+build/
 .eslintrc.js
 node_modules/
 FE/build/
