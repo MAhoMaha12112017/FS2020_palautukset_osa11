@@ -2,8 +2,7 @@ name: Hello Masa!
 
 on:
   push:
-    branches:
-      - [master, main]
+    branches: [master, main]
 
 jobs:
   hello_world_job:
