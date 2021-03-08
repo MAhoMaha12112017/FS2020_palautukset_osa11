@@ -18,3 +18,10 @@ jobs:
         run: npm run eslint
       - name: build
         run: npm run build:ui
+      - name: deploy
+        if: github.event_name == 'push' && !(contains(github.event.commits.*.message, '#skip')) # Means merge or push to master
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "radiant-woodland-63378" #Must be unique in Heroku
+          heroku_email: "ookooko@gmail.com"
