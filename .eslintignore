@@ -3,3 +3,4 @@ build
 node_modules
 FE/build
 FE/node_modules
+cypress
