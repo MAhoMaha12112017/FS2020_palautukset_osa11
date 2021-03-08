@@ -1,5 +1,5 @@
-build/
+build
 .eslintrc.js
-node_modules/
-FE/build/
-FE/node_modules/
+node_modules
+FE/build
+FE/node_modules
