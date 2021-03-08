@@ -11,12 +11,15 @@
     "build:ui": "cd FE && rm -rf build && npm run build --prod && cp -r build ../",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "cypress": "^6.6.0",
     "eslint": "^7.16.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-react": "^7.22.0",

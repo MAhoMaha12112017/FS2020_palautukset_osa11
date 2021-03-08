@@ -18,6 +18,12 @@ jobs:
         run: npm run eslint
       - name: build
         run: npm run build:ui
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:3001
       - name: deploy
         if: github.event_name == 'push' && !(contains(github.event.commits.*.message, '#skip')) # Means merge or push to master
         uses: akhileshns/heroku-deploy@v3.12.12
