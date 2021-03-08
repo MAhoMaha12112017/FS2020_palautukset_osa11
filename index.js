@@ -13,6 +13,14 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 
 const Person = require('./models/person')
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
+app.get('/dummyversion', (req, res) => {
+  res.send('1') // change this string to ensure a new version deployed
+})
+
 app.get('/api/persons', (request, response, next) => {
   Person.find({}).then(persons => {
     response.json(persons)

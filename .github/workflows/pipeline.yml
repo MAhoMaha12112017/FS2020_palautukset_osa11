@@ -25,6 +25,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "radiant-woodland-63378" #Must be unique in Heroku
           heroku_email: "ookooko@gmail.com"
+          # next 3 lines could be commented for health check test (???)
+          healthcheck: "https://radiant-woodland-63378.herokuapp.com/health"
+          checkstring: "ok"
+          # rollbackonhealthcheckfailed: true
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         if: github.event_name == 'push' && !(contains(github.event.commits.*.message, '#skip'))  # Means merge or push to master (and no #skip)
