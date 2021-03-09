@@ -17,8 +17,8 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 
-app.get('/dummyversion', (req, res) => {
-  res.send('3') // change this string to ensure a new version deployed
+app.get('/version', (req, res) => {
+  res.send('4') // change this string to ensure a new version deployed
 })
 
 app.get('/api/persons', (request, response, next) => {
